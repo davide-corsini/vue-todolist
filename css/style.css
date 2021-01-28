@@ -35,7 +35,7 @@ ul{
 
 ul.menu-col{
     padding: 2%;
-    background-color: blueviolet;
+
 }
 
 ul.menu-col li,
@@ -69,11 +69,11 @@ ul.menu-todo li{
 .todo-container2{
     width: 100%;
     height: 300px;
-    background-color: crimson;
     border: 1px solid white;
 }
 ul.menu-todo-delete{
-    margin-right: 20%;;
+    margin-right: 20%;
+
 }
 ul.menu-todo-delete li{
     width: 100%;
@@ -121,4 +121,75 @@ ul.menu-todo-delete li{
 
 #recreate{
     color: blue;
+}
+
+.user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+}
+
+.user > *{
+    flex-basis: calc(100% / 3 );
+}
+
+.user > *:not(:last-child){
+    margin: 0 3px;
+}
+
+.circle-user{
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.user-mail{
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+
+.name-user{
+    display: flex;
+    justify-content: space-around;
+}
+
+.pink{
+    background-color: pink;
+}
+
+.container-progress{
+    height: 50px;
+    align-items: flex-start;
+}
+#progress{
+    
+    background: #00F260;  /* fallback for old browsers */
+    background: linear-gradient(to left, #1577d8, rgba(18, 114, 18, 0.911), #00F260, rgba(224, 60, 10, 0.507), red);
+    height: 10px;
+    width: 0%;
+    border-radius: 10px;
+    transition:  400ms ease all ;
+        /* transition: width 400ms; */
+
+}
+.bar{
+    border: 1px solid black;
+    background-color: white;
+    background: #f0f0f0;
+    height: 10px;
+    width: 50%;
+    border-radius: 10px;
 }

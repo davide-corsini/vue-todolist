@@ -14,17 +14,48 @@
 
         <div class="col">
             <ul class="menu-col">
-                <li>Mail</li>
-                <li>La mia giornata</li>
-                <li>Importante</li>
-                <li>Pianificato</li>
-                <li>Assegnato a te</li>
-                <li>To do</li>
+                <li class='user'>
+                    <div class='circle-user'>
+                        
+                        <span  style='color: white;' class='initial'>DC</span>
+                    </div>
+                    <div class='user-mail'>
+                        <div class='name-user'>
+                            <p class='nome'>Davide Corsini</p><span><i class="fas fa-search"></i></span>
+                        </div>
+                        <p >davidecorsini@yahoo.it</p>
+                    </div>
+
+                </li>
+                <li>
+                    <span><i class="fas fa-sun"></i></span>
+                    La mia giornata
+                </li>
+                <li>
+                    <span><i class="far fa-star"></i></span>
+                    Importante
+                </li>
+                <li>
+                    <span><i class="fas fa-calendar"></i></span>
+                    Pianifica
+                </li>
+                <li>
+                    <span><i class="far fa-user"></i></span>
+                    Assegnate a te
+                </li>
+                <li>
+                    <span><i class="fas fa-house-damage"></i></span>
+                    Attivitá
+                </li>            
             </ul>
             <br>
             <ul class="sub-menu-col">
-                <li>Nuovo Elenco</li>
-                <li>Salva To List</li>
+                <li>
+                    <span></span>
+                    Nuovo Elenco</li>
+                <li>
+                    <span></span>
+                    Salva To List</li>
                 <li></li>
             </ul>
         </div>
@@ -37,8 +68,15 @@
             </h2>
             <div class="todo-container">
                 <ul class='menu-todo' v-if='todos.length > 0'>
+                    <div style='height: 40px; width: 100%;  display: flex; justify-content: flex-end; align-items: center;'>
+                        <i class='fas fa-plus'></i>
+                        <i style="margin-left: 10px;" class="fas fa-trash" @click="deleteAllTodo"></i>
+                    </div>
                     <li class='design-note' v-for="(contenuto,indice) in todos">{{  contenuto   }}
-                        <i id='font-delete' class="fas fa-times" @click="deleteTodo(indice)"></i>
+                        <div>
+                            <i id='font-delete' class="fas fa-times" @click="deleteTodo(indice)"></i>
+                            <i @click='deletedVerifica(indice)' id='verifica' class="fas fa-check" style='color: green;'></i>
+                        </div>
                     </li>
                 </ul>
                 <h2 v-else>Non ci sono ancora note</h2>
@@ -46,7 +84,22 @@
 
 
             <div class="todo-container2">
-                    <ul class="menu-todo-delete">
+                <h2 >Look your progress</h2>
+                <div style="display: flex; flex-direction: row;" class='contain-progress'>
+                
+                    <div class="testo" id="percentuale">0%</div>
+                    <div class='bar'>
+                        <div id='progress' style='height: 100% '></div>
+                    </div>
+                </div>
+                <!-- v-if='todoDelete.length > 0' -->
+                <div style='height: 100px; width: 52%; display: flex; justify-content: space-between; margin-top: 20px; background-color: red;'>
+                    <h3 style = 'display: inline-block'>Your trash</h3>
+                    <span>
+                        <i class='fas fa-trash' @click='deleteAllTodoTrash'></i>
+                    </span>
+                </div>
+                    <ul  class="menu-todo-delete">
                         <li class='design-note' v-for="(contenuto, indice) in todoDelete">{{    contenuto   }}
                             <div>
                                 <i id='font-delete' class="fas fa-times" @click='removeNotes(indice)'></i>
@@ -54,6 +107,7 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- <h2 v-else>Non ci sono elementi da cestinare</h2> -->
             </div>
 
 
