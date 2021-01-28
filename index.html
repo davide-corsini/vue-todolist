@@ -44,16 +44,21 @@
             </div>
 
 
-            <div class="todo-container">
+            <div class="todo-container2">
                     <ul class="menu-todo-delete">
-                        <li v-for="(contenuto, indice) in todoDelete"></li>
+                        <li v-for="(contenuto, indice) in todoDelete">{{    contenuto   }}
+                            <div>
+                                <i class="fas fa-times" @click="deleteTodo(indice)"></i>
+                                <i class="fas fa-window-restore"></i>
+                            </div>
+                        </li>
                     </ul>
             </div>
 
 
             <div class="container-input">
-                <input type="text" placeholder="Inserisci nuova attivitá...">
-                <button>Aggingi un'attivitá</button>
+                <input @keyup.enter='addTodo' type="text" placeholder="Inserisci nuova attivitá...">
+                <button @click='addTodo'>Aggingi un'attivitá</button>
                 
             </div>
         </div>

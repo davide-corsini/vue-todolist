@@ -7,9 +7,22 @@ var app = new Vue({
             'Corso Yoga', 
             'Visita Medica'
         ],
-        todoDelete: []
+        todoDelete: [],
+        //newNote mi serve per input da parte di utente
+        newNote: ''
     },
     methods: {
+        addTodo(){
+            //qui gli dico che deve contenere piu di 4 caratteri
+            if(this.newNote.length > 4){
+                this.todos.push(this.newNote);
+            }
+            else{
+                alert('Inserisci almeno 4 caratteri');
+            }
+            //dopo risvuotami input text
+            this.newNote = '';
+        },
         deleteTodo(indice){
             this.todoDelete.push(this.todos[indice])
             this.todos.splice(indice, 1);

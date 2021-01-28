@@ -67,6 +67,20 @@ ul.menu-todo li{
 }
 
 
+.todo-container2{
+    width: 100%;
+    height: 300px;
+    background-color: crimson;
+    border: 1px solid white;
+}
+ul.menu-todo-delete{
+    margin-right: 20%;;
+}
+ul.menu-todo-delete li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
 .container-input{
     width: 100%;
