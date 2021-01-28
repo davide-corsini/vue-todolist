@@ -27,6 +27,14 @@ var app = new Vue({
             this.todoDelete.push(this.todos[indice])
             this.todos.splice(indice, 1);
             alert('Stai cancellando momentaneamente il todo');
+        },
+        ripristinateTodo(indice){
+            this.todos.push(this.todoDelete[indice]);
+            this.todoDelete.splice(indice, 1);
+        },
+        removeNotes(indice){
+            this.todoDelete.pop(indice);
+            alert('stai cancellando definitivamente il tuo elemento');
         }
     }
 });
