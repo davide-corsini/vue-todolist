@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To do, rendi la tua produttivitá giornaliera costante al fine di aumentare la tua crescita personale e professionale</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
@@ -36,20 +36,21 @@
                 Attivitá
             </h2>
             <div class="todo-container">
-                <ul class='menu-todo'>
-                    <li v-for="(contenuto,indice) in todos">{{  contenuto   }}
-                        <i class="fas fa-times" @click="deleteTodo(indice)"></i>
+                <ul class='menu-todo' v-if='todos.length > 0'>
+                    <li class='design-note' v-for="(contenuto,indice) in todos">{{  contenuto   }}
+                        <i id='font-delete' class="fas fa-times" @click="deleteTodo(indice)"></i>
                     </li>
                 </ul>
+                <h2 v-else>Non ci sono ancora note</h2>
             </div>
 
 
             <div class="todo-container2">
                     <ul class="menu-todo-delete">
-                        <li v-for="(contenuto, indice) in todoDelete">{{    contenuto   }}
+                        <li class='design-note' v-for="(contenuto, indice) in todoDelete">{{    contenuto   }}
                             <div>
-                                <i class="fas fa-times" @click='removeNotes(indice)'></i>
-                                <i class="fas fa-window-restore" @click='ripristinateTodo(indice)'></i>
+                                <i id='font-delete' class="fas fa-times" @click='removeNotes(indice)'></i>
+                                <i id='recreate' class="fas fa-window-restore" @click='ripristinateTodo(indice)'></i>
                             </div>
                         </li>
                     </ul>
@@ -57,8 +58,8 @@
 
 
             <div class="container-input">
-                <input @keyup.enter='addTodo' type="text" v-model="newNote" placeholder="Inserisci nuova attivitá...">
-                <button @click='addTodo'>Aggingi un'attivitá</button>
+                <input id='input' @keyup.enter='addTodo' type="text" v-model="newNote" placeholder="Inserisci nuova attivitá...">
+                <div id='add-note' @click='addTodo'>Aggingi un'attivitá</div>
                 
             </div>
         </div>

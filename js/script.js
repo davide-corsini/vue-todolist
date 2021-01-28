@@ -9,13 +9,16 @@ var app = new Vue({
         ],
         todoDelete: [],
         //newNote mi serve per input da parte di utente
-        newNote: ''
+        newNote: '',
+        backgroundBtn: ''
     },
     methods: {
         addTodo(){
             //qui gli dico che deve contenere piu di 4 caratteri
             if(this.newNote.length > 4){
                 this.todos.push(this.newNote);
+                this.backgroundBtn = 'btn';
+
             }
             else{
                 alert('Inserisci almeno 4 caratteri');

@@ -34,7 +34,7 @@ ul{
 }
 
 ul.menu-col{
-    height: 400px;
+    padding: 2%;
     background-color: blueviolet;
 }
 
@@ -48,7 +48,6 @@ ul.sub-menu-col li{
     width: 100%;
     height: 100%;
     padding: 1%;
-    background-color: coral;
     margin-left: 15%;
 
 }
@@ -84,8 +83,42 @@ ul.menu-todo-delete li{
 
 .container-input{
     width: 100%;
-    height: 200px;
-    background-color: pink;
+    border: 1px solid black;
     display: flex;
-    align-items: flex-end;
+    justify-content: space-around;
+    padding: 2% 0%;
+}
+
+#add-note{
+    padding: 6px 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+#input{
+    /* flex-grow: 2; */
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 60%;
+}
+
+#input:focus{
+    outline: 0;
+}
+
+.btn{
+    background-color: crimson;
+}
+
+.design-note{
+    border-bottom: 1px solid rgba(71, 70, 70, 0.13);
+}
+
+#font-delete{
+    color: red;
+}
+
+#recreate{
+    color: blue;
 }
