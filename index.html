@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Yusei+Magic&display=swap"
+        rel="stylesheet">
 </head>
 <body>
     
@@ -21,9 +25,9 @@
                     </div>
                     <div class='user-mail'>
                         <div class='name-user'>
-                            <p class='nome'>Davide Corsini</p><span><i class="fas fa-search"></i></span>
+                            <p class='nome'>Davide</p><span><i class="fas fa-search"></i></span>
                         </div>
-                        <p >davidecorsini@yahoo.it</p>
+                        <p style='font-size: 10px;'>davide@yahoo.it</p>
                     </div>
 
                 </li>
@@ -50,9 +54,12 @@
             </ul>
             <br>
             <ul class="sub-menu-col">
-                <li>
-                    <span></span>
-                    Nuovo Elenco</li>
+                <li style='display: flex; justify-content: space-between;'>
+                    Nuovo Elenco
+                    <span>
+                        <i for='add-note' class='fas fa-plus'></i>
+                    </span>
+                </li>
                 <li>
                     <span></span>
                     Salva To List</li>
@@ -67,9 +74,9 @@
                 Attivitá
             </h2>
             <div class="todo-container">
-                <ul class='menu-todo' v-if='todos.length > 0'>
+                <ul class='menu-todo' for='add-note' v-if='todos.length > 0'>
                     <div style='height: 40px; width: 100%;  display: flex; justify-content: flex-end; align-items: center;'>
-                        <i class='fas fa-plus'></i>
+                        <i  @click='alertAttivita' class='fas fa-plus'></i>
                         <i style="margin-left: 10px;" class="fas fa-trash" @click="deleteAllTodo"></i>
                     </div>
                     <li class='design-note' v-for="(contenuto,indice) in todos">{{  contenuto   }}
@@ -93,14 +100,15 @@
                     </div>
                 </div>
                 <!-- v-if='todoDelete.length > 0' -->
-                <div style='height: 100px; width: 52%; display: flex; justify-content: space-between; margin-top: 20px; background-color: red;'>
-                    <h3 style = 'display: inline-block'>Your trash</h3>
-                    <span>
-                        <i class='fas fa-trash' @click='deleteAllTodoTrash'></i>
-                    </span>
+                <div style='height: 80px; width: 52%; display: flex; justify-content: space-between; align-items: center; margin-top: 5px;'>
+                    <h3>Your trash</h3>
+                    <div class='area-cestino'  @click='deleteAllTodoTrash'>
+                        <i class='fas fa-trash'></i>
+                    </div>
                 </div>
                     <ul  class="menu-todo-delete">
                         <li class='design-note' v-for="(contenuto, indice) in todoDelete">{{    contenuto   }}
+
                             <div>
                                 <i id='font-delete' class="fas fa-times" @click='removeNotes(indice)'></i>
                                 <i id='recreate' class="fas fa-window-restore" @click='ripristinateTodo(indice)'></i>

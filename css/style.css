@@ -7,6 +7,8 @@
 
 body{
     font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Yusei Magic', sans-serif;
 }
 i{
     cursor: pointer;
@@ -21,9 +23,10 @@ i{
 }
 
 .col{
+    padding: 2%;
     width: 15%;
     height: 100%;
-    border: 1px solid black;
+    border-right: 1px solid black;
     position: fixed;
     top: 0;
     left: 0;
@@ -35,13 +38,13 @@ ul{
 
 ul.menu-col{
     padding: 2%;
-
 }
 
 ul.menu-col li,
 ul.sub-menu-col li{
     line-height: 1.9;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .main-nav{
@@ -52,12 +55,12 @@ ul.sub-menu-col li{
 
 }
 .todo-container{
-    width: 100%;
-    height: 300px;
+    width: 90%;
     background-color: cadetblue;
 }
 ul.menu-todo{
-    margin-right: 20%;
+    width: 100%;
+    padding: 2%;
 }
 ul.menu-todo li{
     width: 100%;
@@ -67,12 +70,12 @@ ul.menu-todo li{
 
 
 .todo-container2{
-    width: 100%;
-    height: 300px;
+    width: 90%;
     border: 1px solid white;
 }
 ul.menu-todo-delete{
     margin-right: 20%;
+    padding: 2%;
 
 }
 ul.menu-todo-delete li{
@@ -132,23 +135,23 @@ ul.menu-todo-delete li{
 
 }
 
-.user > *{
-    flex-basis: calc(100% / 3 );
-}
-
 .user > *:not(:last-child){
     margin: 0 3px;
 }
 
 .circle-user{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: orange;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
+}
+
+.circle-user span{
+    font-size: 8px;
 }
 
 .user-mail{
@@ -192,4 +195,20 @@ ul.menu-todo-delete li{
     height: 10px;
     width: 50%;
     border-radius: 10px;
+}
+
+
+.area-cestino{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    
+
 }
