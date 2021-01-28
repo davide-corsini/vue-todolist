@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+    
+    <div class="container" id="app">
+
+        <div class="col">
+            <ul class="menu-col">
+                <li>Mail</li>
+                <li>La mia giornata</li>
+                <li>Importante</li>
+                <li>Pianificato</li>
+                <li>Assegnato a te</li>
+                <li>To do</li>
+            </ul>
+            <br>
+            <ul class="sub-menu-col">
+                <li>Nuovo Elenco</li>
+                <li>Salva To List</li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="main-nav">
+
+            <h2>
+                <span><i class="fas fa-home"></i></span>
+                Attivitá
+            </h2>
+            <div class="todo-container">
+                <ul class='menu-todo'>
+                    <li v-for="(contenuto,indice) in todos">{{  contenuto   }}
+                        <i class="fas fa-times" @click="deleteTodo(indice)"></i>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="todo-container">
+                    <ul class="menu-todo-delete">
+                        <li v-for="(contenuto, indice) in todoDelete"></li>
+                    </ul>
+            </div>
+
+
+            <div class="container-input">
+                <input type="text" placeholder="Inserisci nuova attivitá...">
+                <button>Aggingi un'attivitá</button>
+                
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
