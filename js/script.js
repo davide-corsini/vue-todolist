@@ -1,6 +1,11 @@
 var app = new Vue({
     el: '#app',
     data: {
+
+        // complete : document.getElementById('verifica'),
+        // barraIncremento : document.getElementById('progress'),
+        // testo : document.getElementById('percentuale'),
+        // incremento : 10,
         todos: [
             'Fare spesa',
             'Andare in Banca',
@@ -12,7 +17,8 @@ var app = new Vue({
         //newNote mi serve per input da parte di utente
         newNote: '',
         valore: 10,
-        statistic: '%'
+        statistic: '%',
+        rewrite: ''
     },
     methods: {
         addTodo(){
@@ -38,7 +44,23 @@ var app = new Vue({
 
 
         deletedVerifica(indice){
-            this.todos.splice(indice, 1);
+            
+            
+                // this.barraIncremento = this.incremento;
+                // this.testo.innerHTML = this.incremento;
+                // if (this.incremento === 100) {
+                //     this.incremento = 0 ;
+                // }
+                // else if(this.incremento < 100){
+                //     this.incremento +=10 ; 
+                // }
+
+                
+            
+
+        this.todos.splice(indice, 1);
+
+
         },
 
 
@@ -73,19 +95,28 @@ var app = new Vue({
         },
         alertAttivita(){
             alert('Inserisci una nuova attivitá');
+        },
+        reWrite(indice){
+            this.rewrite = prompt('Modifica il tuo obbiettivo giornaliero', this.todos[indice]);
+            if(this.rewrite.length < 4){
+                alert('Devi inserire almeno 4 caratteri');
+            }
+            else{
+                this.todos.splice(indice, 1, this.rewrite);
+            }
         }
     }
 });
 
-//complete is equal of my id verifica
+// complete is equal of my id verifica
 // barraIncrementoo is equal of my id progress
 // testo is equal of my id percentuale
 var complete = document.getElementById('verifica');
 var barraIncremento = document.getElementById('progress');
 var testo = document.getElementById('percentuale');
 var incremento = 10;
-//incremento sta alla larghezza della barraIncremento bar
-// Increase the width of the bar by 10 percent(10%)
+// // incremento sta alla larghezza della barraIncremento bar
+// // Increase the width of the bar by 10 percent(10%)
 complete.addEventListener('click', () => {
     barraIncremento.style.width = incremento + '%';
     testo.innerHTML = incremento + '%';
@@ -94,6 +125,7 @@ complete.addEventListener('click', () => {
     }
     else {
         incremento += 10;
+        console.log('verifica');
     }
 });
 

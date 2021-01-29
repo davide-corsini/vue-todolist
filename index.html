@@ -82,7 +82,8 @@
                     <li class='design-note' v-for="(contenuto,indice) in todos">{{  contenuto   }}
                         <div>
                             <i id='font-delete' class="fas fa-times" @click="deleteTodo(indice)"></i>
-                            <i @click='deletedVerifica(indice)' id='verifica' class="fas fa-check" style='color: green;'></i>
+                            <i     @click='deletedVerifica(indice)' id='verifica' class="fas fa-check" style='color: green;'></i>
+                            <i class="far fa-edit" @click="reWrite(indice)"></i>
                         </div>
                     </li>
                 </ul>

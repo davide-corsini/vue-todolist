@@ -119,11 +119,11 @@ ul.menu-todo-delete li{
 }
 
 #font-delete{
-    color: red;
+    color: rgba(201, 68, 68, 0.822);
 }
 
 #recreate{
-    color: blue;
+    color: rgb(11, 73, 29);
 }
 
 .user{
