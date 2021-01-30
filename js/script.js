@@ -127,23 +127,23 @@ var app = new Vue({
 // complete is equal of my id verifica
 // barraIncrementoo is equal of my id progress
 // testo is equal of my id percentuale
-// var complete = document.getElementById('verifica');
-// var barraIncremento = document.getElementById('progress');
-// var testo = document.getElementById('percentuale');
-// var boh = document.getElementsByClassName('design-note');
-// console.log(boh);
-// var incremento = 1;
-// // // incremento sta alla larghezza della barraIncremento bar
-// // // Increase the width of the bar by 10 percent(10%)
-// complete.addEventListener('click', () => {
-//     barraIncremento.style.width = incremento + '%';
-//     testo.innerHTML = incremento + '%';
-//     if (incremento === 100) {
-//         incremento = 0;
-//     }
-//     else {
-//         incremento += 10;
-//         console.log('verifica');
-//     }
-// });
+var complete = document.getElementById('verifica');
+var barraIncremento = document.getElementById('progress');
+var testo = document.getElementById('percentuale');
+var boh = document.getElementsByClassName('design-note');
+console.log(boh);
+var incremento = 10;
+// // incremento sta alla larghezza della barraIncremento bar
+// // Increase the width of the bar by 10 percent(10%)
+complete.addEventListener('click', () => {
+    barraIncremento.style.width = incremento + '%';
+    testo.innerHTML = incremento + '%';
+    if (incremento === 100) {
+        incremento = 0;
+    }
+    else {
+        incremento += 10;
+        console.log('verifica');
+    }
+});
 
