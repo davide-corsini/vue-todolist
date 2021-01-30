@@ -2,10 +2,9 @@ var app = new Vue({
     el: '#app',
     data: {
 
-        // complete : document.getElementById('verifica'),
-        // barraIncremento : document.getElementById('progress'),
-        // testo : document.getElementById('percentuale'),
-        // incremento : 10,
+        barraIncremento : document.getElementById('progress'),
+        testo : document.getElementById('percentuale'),
+        incremento : 0,
         todos: [
             'Fare spesa',
             'Andare in Banca',
@@ -17,8 +16,9 @@ var app = new Vue({
         //newNote mi serve per input da parte di utente
         newNote: '',
         valore: 10,
-        statistic: '%',
-        rewrite: ''
+        rewrite: '',
+        arrayBar: [],
+        elementi: 4
     },
     methods: {
         addTodo(){
@@ -46,21 +46,36 @@ var app = new Vue({
         deletedVerifica(indice){
             
             
-                // this.barraIncremento = this.incremento;
-                // this.testo.innerHTML = this.incremento;
-                // if (this.incremento === 100) {
-                //     this.incremento = 0 ;
-                // }
-                // else if(this.incremento < 100){
-                //     this.incremento +=10 ; 
-                // }
+            this.todos.forEach((element, index) => {
+                if(this.todos.length > 0){
+                        this.incremento = 100 / this.todos.length;
+                        console.log(this.incremento);
+                    if (this.incremento === 100) {
+                        this.incremento = 0 ;
+                    }
+                    else if(this.incremento < 100){
+                        this.incremento += this.incremento; 
+                        console.log(this.incremento);
+                    }
 
+                }
+            });
                 
-            
+                this.arrayBar.push(this.todos[indice]);
+                this.todos.splice(indice, 1);
+                console.log(this.arrayBar);
 
-        this.todos.splice(indice, 1);
-
-
+                // complete.addEventListener('click', () => {
+//     barraIncremento.style.width = incremento + '%';
+//     testo.innerHTML = incremento + '%';
+//     if (incremento === 100) {
+//         incremento = 0;
+//     }
+//     else {
+//         incremento += 10;
+//         console.log('verifica');
+//     }
+// });
         },
 
 
@@ -105,27 +120,30 @@ var app = new Vue({
                 this.todos.splice(indice, 1, this.rewrite);
             }
         }
+
     }
 });
 
 // complete is equal of my id verifica
 // barraIncrementoo is equal of my id progress
 // testo is equal of my id percentuale
-var complete = document.getElementById('verifica');
-var barraIncremento = document.getElementById('progress');
-var testo = document.getElementById('percentuale');
-var incremento = 10;
-// // incremento sta alla larghezza della barraIncremento bar
-// // Increase the width of the bar by 10 percent(10%)
-complete.addEventListener('click', () => {
-    barraIncremento.style.width = incremento + '%';
-    testo.innerHTML = incremento + '%';
-    if (incremento === 100) {
-        incremento = 0;
-    }
-    else {
-        incremento += 10;
-        console.log('verifica');
-    }
-});
+// var complete = document.getElementById('verifica');
+// var barraIncremento = document.getElementById('progress');
+// var testo = document.getElementById('percentuale');
+// var boh = document.getElementsByClassName('design-note');
+// console.log(boh);
+// var incremento = 1;
+// // // incremento sta alla larghezza della barraIncremento bar
+// // // Increase the width of the bar by 10 percent(10%)
+// complete.addEventListener('click', () => {
+//     barraIncremento.style.width = incremento + '%';
+//     testo.innerHTML = incremento + '%';
+//     if (incremento === 100) {
+//         incremento = 0;
+//     }
+//     else {
+//         incremento += 10;
+//         console.log('verifica');
+//     }
+// });
 
